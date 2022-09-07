@@ -1,16 +1,25 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Hello World
-
-
+# This is a basic workflow to help you get started with Action
+name: test 1
 on: [push]
-  variable:"Je suis une variable dans le workflow"
-job:
+env:
+  variable: var1
+jobs:
   job1:
     runs-on: ubuntu-latest 
+    env: 
+      toto: var2
     steps:
     - uses: actions/checkout@v3
     - name : hello world !
       run: echo "hello world !"
+      run: echo $variable
+      run: echo $toto
+  job2:
+  runs-on: ubuntu-latest 
+    steps:
+    - uses: actions/checkout@v3
+    - name : hello world !
+      run: echo $toto
+      
 
  
