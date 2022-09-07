@@ -4,7 +4,8 @@ name: Hello World
 
 
 on: [push]
-jobs:
+  variable:"Je suis une variable dans le workflow"
+job:
   job1:
     runs-on: ubuntu-latest 
     steps:
